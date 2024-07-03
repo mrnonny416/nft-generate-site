@@ -4,7 +4,7 @@ export default function HomePage() {
             className="flex flex-col w-full h-screen  max-w-[400px]"
             style={{
                 backgroundImage: "url(/image.png)",
-                backgroundSize: "cover",
+                backgroundSize: "fit",
                 backgroundPosition: "bottom",
                 backgroundRepeat: "no-repeat"
             }}
