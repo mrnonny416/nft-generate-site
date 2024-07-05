@@ -12,10 +12,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        mainGreen: "#CCFF00",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
+        doHyeon: ['Do Hyeon'],
       },
     },
   },
