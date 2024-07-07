@@ -12,6 +12,7 @@ export default function HomePage() {
                 backgroundRepeat: "no-repeat"
             }}
         >
+            <Header />
             <div className="flex flex-col w-full px-3 h-screen bg-gradient-to-b from-black from-80% to-black-1/6  gap-10 max-w-[400px]">
                 <div className="text-[67px]">CREATE YOUR OWN NFT FROM OUR TOOLS</div>
                 <div className="text-[26px]">สร้าง NFT ของคุณง่ายๆ ด้วยเครื่องมือของเรา ไม่กี่ขั้นตอน</div>
