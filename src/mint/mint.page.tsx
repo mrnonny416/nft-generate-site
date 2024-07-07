@@ -30,10 +30,10 @@ const Mint = () => {
     return (
         <div>
             <Header headerName='Project' />
-            <div className='grid grid-cols-2 m-auto w-fit gap-6 pt-6 pb-4'>
+            <div className='grid grid-cols-2 m-auto w-fit gap-6 pt-6 pb-4 px-4'>
                 {data && data.map((x) => (
                     <div key={x.id} className='flex justify-center'>
-                        <Image src={x.img} alt={x.name} width={0} height={0} />
+                        <Image src={x.img} alt={x.name} width={500} height={500} />
                     </div>
                 ))}
             </div>
@@ -44,7 +44,7 @@ const Mint = () => {
 
                 <Image src={sendB} alt='sendB' />
             </div>
-            <p className='pt-4 text-[12px] w-[325px] text-center m-auto'>
+            <p className='pt-4 text-[12px] text-center m-auto px-4'>
                 Text RoremText RoremText RoremText RoremText RoremText RoremText RoremText RoremText RoremText RoremText RoremText Rorem
             </p>
             {showMintState && (
