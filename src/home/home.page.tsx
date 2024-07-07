@@ -1,7 +1,6 @@
-import Image from "next/image";
+import Header from "../components/header.component";
 
 export default function HomePage() {
-    const main1 = "flex flex-row justify-between text-mainGreen px-3 bg-black pt-10";
 
     return (
         <div
@@ -13,12 +12,6 @@ export default function HomePage() {
                 backgroundRepeat: "no-repeat"
             }}
         >
-            <div className={`${main1}`}>
-                <div className="flex text-[34px]">NFT</div>
-                <button className="flex border border-2 border-mainGreen px-[10px] py-[7px] text-[18px] rounded-xl">
-                    Connect
-                </button>
-            </div>
             <div className="flex flex-col w-full px-3 h-screen bg-gradient-to-b from-black from-80% to-black-1/6  gap-10 max-w-[400px]">
                 <div className="text-[67px]">CREATE YOUR OWN NFT FROM OUR TOOLS</div>
                 <div className="text-[26px]">สร้าง NFT ของคุณง่ายๆ ด้วยเครื่องมือของเรา ไม่กี่ขั้นตอน</div>
