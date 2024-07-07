@@ -41,7 +41,6 @@ export default function DashboardItemsPage() {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center bg-black w-[45%] rounded-lg ">
-         
         </div>
       </div>
     </div>
