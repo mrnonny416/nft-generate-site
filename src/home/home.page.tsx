@@ -1,10 +1,11 @@
+import Link from "next/link";
 import Header from "../components/header.component";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full h-screen relative ">
       <Header />
-      <div className="flex flex-col w-full h-screen bg-black z-10 absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-60"/>
+      <div className="flex flex-col w-full h-screen bg-black z-10 absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-60" />
       <div
         className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-70"
         style={{
@@ -19,9 +20,11 @@ export default function HomePage() {
         <div className="text-[26px]">
           สร้าง NFT ของคุณง่ายๆ ด้วยเครื่องมือของเรา ไม่กี่ขั้นตอน
         </div>
-        <button className="px-[10px] py-[7px] text-[18px] w-fit  border-2 border-mainGreen bg-mainGreen text-black rounded-xl border-opacity-50">
-          Get Started
-        </button>
+        <Link href={'/dashboard'}>
+          <button className="px-[10px] py-[7px] text-[18px] w-fit  border-2 border-mainGreen bg-mainGreen text-black rounded-xl border-opacity-50">
+            Get Started
+          </button>
+        </Link>
       </div>
     </div>
   );
