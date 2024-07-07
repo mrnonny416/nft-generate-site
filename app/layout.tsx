@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`font-doHyeon`}>{children}</body>
+            <body className={`flex font-doHyeon m-auto w-[70%] min-w-[500px] border-2 h-screen`}>{children}</body>
         </html>
     );
 }
