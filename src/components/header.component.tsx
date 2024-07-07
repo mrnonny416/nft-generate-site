@@ -9,7 +9,7 @@ const Header = (props: any) => {
     const { headerName } = props
     console.log(props);
 
-    const main1 = "flex flex-row justify-between text-mainGreen px-3 bg-black pt-10 pb-[15px]";
+    const main1 = "flex flex-row justify-between text-mainGreen px-3 bg-black pt-10 pb-[15px] z-[100]";
 
     const [signIn, setSignIn] = useState<boolean>()
     const [menuHamburger, setMenuHamburger] = useState<boolean>(false)
@@ -51,14 +51,14 @@ const Header = (props: any) => {
                         <Image src={Hamburger} alt='Hamburger' />
                     </button>
                     {menuHamburger && (
-                        <div className='w-[120px] h-fit absolute right-0 mt-1 border-2 border-mainGreen rounded-md p-3'>
-                            <Link href={'/'} className='w-full flex text-center justify-center'>Home</Link>
+                        <div className='w-[120px] h-fit absolute right-0 mt-1 border-2 border-mainGreen rounded-md p-3 bg-black'>
+                            <Link href={'/'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Home</Link>
                             <hr className='my-2 border-mainGreen' />
-                            <Link href={'/dashboard'} className='w-full flex text-center justify-center'>Dashboard</Link>
+                            <Link href={'/dashboard'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Dashboard</Link>
                             <hr className='my-2 border-mainGreen' />
-                            <Link href={'/market'} className='w-full flex text-center justify-center'>Market</Link>
+                            <Link href={'/market'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Market</Link>
                             <hr className='my-2 border-mainGreen' />
-                            <Link href={'/mint'} className='w-full flex text-center justify-center'>Mint</Link>
+                            <Link href={'/mint'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Mint</Link>
                             <hr className='my-2 border-mainGreen' />
                             <button className='w-full' onClick={() => { onSignIn(false); setMenuHamburger(false) }}>Logout</button>
                         </div>

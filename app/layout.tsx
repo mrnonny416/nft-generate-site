@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={` font-doHyeon m-auto w-[70%] min-w-[500px] border-2 h-screen`}>
+            <body className={` font-doHyeon m-auto w-[70%] min-w-[500px] h-screen`}>
                 {children}
             </body>
         </html>
