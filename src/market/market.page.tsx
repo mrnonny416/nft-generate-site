@@ -10,7 +10,7 @@ import Telegram from "../../public/Tele.svg";
 export default function MarketPage() {
   return (
     <div className="flex flex-col w-full h-screen relative">
-      <Header headerName="Market" />
+      <Header headerName="Market"/>
       <div className="flex flex-rows justify-around mt-[10px] w-full">
         <div className="flex flex-col justify-center items-center bg-white w-[45%] rounded-lg ">
           <div className="flex flex-col justify-center items-center bg-white w-[95%] rounded-lg m-3">

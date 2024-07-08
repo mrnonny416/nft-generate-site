@@ -9,7 +9,7 @@ const Header = (props: any) => {
     const { headerName } = props
     console.log(props);
 
-    const main1 = "flex flex-row justify-between text-mainGreen px-3 bg-black pt-10 pb-[15px] z-[100]";
+    const main1 = "flex flex-row justify-between text-mainGreen px-3 bg-black/90 pt-10 pb-[15px] z-[100] sticky top-0";
 
     const [signIn, setSignIn] = useState<boolean>()
     const [menuHamburger, setMenuHamburger] = useState<boolean>(false)

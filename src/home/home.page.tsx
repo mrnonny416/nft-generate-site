@@ -4,7 +4,7 @@ import Header from "../components/header.component";
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full h-screen relative ">
-      <Header />
+      <Header/>
       <div className="flex flex-col w-full h-screen bg-black z-10 absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-60" />
       <div
         className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-70"
