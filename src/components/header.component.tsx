@@ -39,7 +39,7 @@ const Header = (props: any) => {
     return (
         <div className={`${main1}`}>
             <Link href={'/'} className="flex text-[34px]">NFT</Link>
-            <div className="flex text-[18px] justify-center items-center">{headerName}</div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 text-[18px]">{headerName}</div>
             {!signIn && (
                 <button className="flex border-2 border-mainGreen px-[10px] py-[7px] text-[18px] rounded-xl items-center h-fit" onClick={() => onSignIn(true)}>
                     Connect
