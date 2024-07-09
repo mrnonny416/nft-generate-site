@@ -3,6 +3,7 @@ import Image from "next/image";
 import ImportIMG from "../../public/import.svg";
 import ImportIMG2 from "../../public/import2.svg";
 import Kapom from "../../public/Frame 4.svg";
+import Link from "next/link";
 
 export default function DashboardItemsPage() {
   return (
@@ -20,20 +21,20 @@ export default function DashboardItemsPage() {
       </div>
       {/* Items Show List */}
       <div className="flex flex-rows justify-around mt-[10px] w-full">
-        <div className="flex flex-col justify-center items-center bg-white w-[45%] rounded-lg ">
+        <Link href={'/projects/edit'} className="flex flex-col justify-center items-center bg-white w-[45%] rounded-lg ">
           <div className="flex flex-col justify-center items-center bg-white w-[95%] rounded-lg m-3">
             <Image src={Kapom} alt="Kapom" className="w-full" />
             <span className="pl-2 text-black">Project Name</span>
           </div>
-        </div>
-        <div className="flex flex-col justify-center items-center bg-white w-[45%] rounded-lg ">
+        </Link>
+        <Link href={'/projects/edit'} className="flex flex-col justify-center items-center bg-white w-[45%] rounded-lg ">
           <div className="flex flex-col justify-center items-center bg-white w-[95%] rounded-lg m-3">
             <Image src={Kapom} alt="Kapom" className="w-full" />
             <span className="pl-2 text-black">Project Name</span>
           </div>
-        </div>
+        </Link>
       </div>
-      <div className="flex flex-rows justify-around mt-[20px] w-full">
+      <Link href={'/projects/edit'} className="flex flex-rows justify-around mt-[20px] w-full">
         <div className="flex flex-col justify-center items-center bg-white w-[45%] rounded-lg ">
           <div className="flex flex-col justify-center items-center bg-white w-[95%] rounded-lg m-3">
             <Image src={Kapom} alt="Kapom" className="w-full" />
@@ -42,7 +43,7 @@ export default function DashboardItemsPage() {
         </div>
         <div className="flex flex-col justify-center items-center bg-black w-[45%] rounded-lg ">
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
