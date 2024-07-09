@@ -1,3 +1,5 @@
+import Edit from "@/src/edit/edit.page";
+
 export default function ProjectEdit() {
-    return <></>;
+    return <Edit ></Edit>;
 }

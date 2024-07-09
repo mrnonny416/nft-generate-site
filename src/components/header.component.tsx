@@ -54,6 +54,8 @@ const Header = (props: any) => {
                         <div className='w-[120px] h-fit absolute right-0 mt-1 border-2 border-mainGreen rounded-md p-3 bg-black'>
                             <Link href={'/'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Home</Link>
                             <hr className='my-2 border-mainGreen' />
+                            <Link href={'/projects/create'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>New Project</Link>
+                            <hr className='my-2 border-mainGreen' />
                             <Link href={'/dashboard'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Dashboard</Link>
                             <hr className='my-2 border-mainGreen' />
                             <Link href={'/market'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Market</Link>

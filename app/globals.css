@@ -6,6 +6,7 @@
 :root {
   --background: #000000;
   --foreground: #ededed;
+  --mainGreen: #CCFF00;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -19,4 +20,18 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-synthesis: none;
+}
+
+.input-style {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--mainGreen);
+  border-radius: 0.375rem;
+  background-color: black;
+  outline: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  width: 100%;
 }

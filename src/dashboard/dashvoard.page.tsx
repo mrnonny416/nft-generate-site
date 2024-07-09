@@ -1,11 +1,13 @@
+
 import Header from "../components/header.component";
 import Image from "next/image";
 import ImportIMG from "../../public/import.svg";
 import ImportIMG2 from "../../public/import2.svg";
 import Warning from "../../public/Warning.svg";
-import Link from "next/link";
 
 export default function DashboardPage(props: any) {
+
+
   const { typePageDashboard } = props
   const chkTypePage = () => {
     typePageDashboard(true);
@@ -28,6 +30,7 @@ export default function DashboardPage(props: any) {
         <button className="text-lg border-2 w-[187px] h-[37px] border-mainGreen bg-mainGreen text-black rounded-xl mt-6 flex flex-rows justify-start items-center pl-4" onClick={chkTypePage}>
           <Image src={ImportIMG} alt="ImportIMG" />
           <span className="pl-2">Add New Project</span>
+          {/* <Link href={'/projects/create'} className="pl-2">Add New Project</Link> */}
         </button>
         <button className="text-lg border-2 w-[187px] h-[37px] border-mainGreen bg-black text-mainGreen rounded-xl mt-6 flex flex-rows justify-start items-center pl-5">
           <Image src={ImportIMG2} alt="ImportIMG2" />
