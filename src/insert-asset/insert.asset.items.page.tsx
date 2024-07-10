@@ -4,6 +4,7 @@ import Header from "../components/header.component";
 import Kapom from "../../public/Frame 4.svg";
 
 export default function InsertAssetItemsPage() {
+
   return (
     <div className="flex flex-col w-full h-screen relative ">
       <Header headerName="New/Assets" />
@@ -125,6 +126,9 @@ export default function InsertAssetItemsPage() {
             </div>
           </div>
         </div>
+        <Link href={{ pathname: '../../dashboard', query: { item: 'true' } }} className="cursor-pointer bg-mainGreen text-black py-2 px-4 rounded-md text-center w-[480px] m-10" >
+          Submit
+        </Link>
       </div>
     </div>
   );

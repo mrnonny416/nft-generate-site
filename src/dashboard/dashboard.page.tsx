@@ -6,8 +6,6 @@ import ImportIMG2 from "../../public/import2.svg";
 import Warning from "../../public/Warning.svg";
 
 export default function DashboardPage(props: any) {
-
-
   const { typePageDashboard } = props
   const chkTypePage = () => {
     typePageDashboard(true);

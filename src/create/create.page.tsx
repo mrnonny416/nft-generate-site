@@ -277,7 +277,7 @@ const Create = () => {
                     />
 
                 </div>
-                <Link href={'/insert-asset'} onClick={onSubmit} className="cursor-pointer bg-mainGreen text-black py-2 px-4 rounded-md text-center" >
+                <Link href={'create/assets'} onClick={onSubmit} className="cursor-pointer bg-mainGreen text-black py-2 px-4 rounded-md text-center" >
                     Submit
                 </Link>
                 <Link href={{ pathname: '/dashboard', query: { item: '01' } }} onClick={onCancel} className="cursor-pointer bg-black border-2 border-mainGreen text-mainGreen py-2 px-4 rounded-md text-center" >
