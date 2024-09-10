@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Hamburger from '../../public/hamburger.svg'
-import Link from 'next/link';
+import Hamburger from "../../public/hamburger.svg";
+import Link from "next/link";
 
 const Header = (props: any) => {
-    const { headerName } = props
+    const { headerName } = props;
     console.log(props);
 
-    const main1 = "flex flex-row justify-between text-mainGreen px-3 bg-black/90 pt-10 pb-[15px] z-[100] sticky top-0";
+    const main1 = "flex flex-row justify-between text-mainGreen px-3 bg-white pt-10 pb-[15px] z-[100] sticky top-0";
 
-    const [signIn, setSignIn] = useState<boolean>()
-    const [menuHamburger, setMenuHamburger] = useState<boolean>(false)
+    const [signIn, setSignIn] = useState<boolean>();
+    const [menuHamburger, setMenuHamburger] = useState<boolean>(false);
     const menuRef = useRef<HTMLDivElement>(null);
 
     const onSignIn = (status: boolean) => {
-        setSignIn(status)
-    }
+        setSignIn(status);
+    };
 
     const onSetMenuHamburger = () => {
-        setMenuHamburger(!menuHamburger)
-    }
+        setMenuHamburger(!menuHamburger);
+    };
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -30,45 +30,101 @@ const Header = (props: any) => {
             }
         };
 
-        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [menuRef]);
 
     return (
         <div className={`${main1}`}>
-            <Link href={'/'} className="flex text-[34px]">NFT</Link>
+            <Link href={"/"} className="flex text-[34px]">
+                NFT
+            </Link>
             <div className="absolute left-1/2 transform -translate-x-1/2 text-[18px]">{headerName}</div>
             {!signIn && (
-                <button className="flex border-2 border-mainGreen px-[10px] py-[7px] text-[18px] rounded-xl items-center h-fit" onClick={() => onSignIn(true)}>
+                <button
+                    className="flex border-2 border-mainGreen px-[10px] py-[7px] text-[18px] rounded-xl items-center h-fit"
+                    onClick={() => onSignIn(true)}
+                >
                     Connect
                 </button>
             )}
             {signIn && (
-                <div className='relative' ref={menuRef}>
-                    <button className="flex border-2 border-mainGreen px-[10px] py-[7px] text-[18px] rounded-md items-center" onClick={onSetMenuHamburger}>
-                        <Image src={Hamburger} alt='Hamburger' />
+                <div className="relative" ref={menuRef}>
+                    <button
+                        className="flex border-2 border-mainGreen px-[10px] py-[7px] text-[18px] rounded-md items-center"
+                        onClick={onSetMenuHamburger}
+                    >
+                        <Image src={Hamburger} alt="Hamburger" />
                     </button>
                     {menuHamburger && (
-                        <div className='w-[120px] h-fit absolute right-0 mt-1 border-2 border-mainGreen rounded-md p-3 bg-black'>
-                            <Link href={'/'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Home</Link>
-                            <hr className='my-2 border-mainGreen' />
-                            <Link href={'/projects/create'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>New Project</Link>
-                            <hr className='my-2 border-mainGreen' />
-                            <Link href={'/dashboard'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Dashboard</Link>
-                            <hr className='my-2 border-mainGreen' />
-                            <Link href={'/market'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Market</Link>
-                            <hr className='my-2 border-mainGreen' />
-                            <Link href={'/mint'} onClick={() => { setMenuHamburger(false) }} className='w-full flex text-center justify-center'>Mint</Link>
-                            <hr className='my-2 border-mainGreen' />
-                            <button className='w-full' onClick={() => { onSignIn(false); setMenuHamburger(false) }}>Logout</button>
+                        <div className="w-[120px] h-fit absolute right-0 mt-1 border-2 border-mainGreen rounded-md p-3 bg-white shadow-md">
+                            <Link
+                                href={"/"}
+                                onClick={() => {
+                                    setMenuHamburger(false);
+                                }}
+                                className="w-full flex text-center justify-center"
+                            >
+                                Home
+                            </Link>
+                            <hr className="my-2 border-mainGreen" />
+                            <Link
+                                href={"/projects/create"}
+                                onClick={() => {
+                                    setMenuHamburger(false);
+                                }}
+                                className="w-full flex text-center justify-center"
+                            >
+                                New Project
+                            </Link>
+                            <hr className="my-2 border-mainGreen" />
+                            <Link
+                                href={"/dashboard"}
+                                onClick={() => {
+                                    setMenuHamburger(false);
+                                }}
+                                className="w-full flex text-center justify-center"
+                            >
+                                Dashboard
+                            </Link>
+                            <hr className="my-2 border-mainGreen" />
+                            <Link
+                                href={"/market"}
+                                onClick={() => {
+                                    setMenuHamburger(false);
+                                }}
+                                className="w-full flex text-center justify-center"
+                            >
+                                Market
+                            </Link>
+                            <hr className="my-2 border-mainGreen" />
+                            <Link
+                                href={"/mint"}
+                                onClick={() => {
+                                    setMenuHamburger(false);
+                                }}
+                                className="w-full flex text-center justify-center"
+                            >
+                                Mint
+                            </Link>
+                            <hr className="my-2 border-mainGreen" />
+                            <button
+                                className="w-full"
+                                onClick={() => {
+                                    onSignIn(false);
+                                    setMenuHamburger(false);
+                                }}
+                            >
+                                Logout
+                            </button>
                         </div>
                     )}
                 </div>
             )}
-        </div >
-    )
-}
+        </div>
+    );
+};
 
-export default Header
+export default Header;

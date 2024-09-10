@@ -13,7 +13,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        mainGreen: "#CCFF00",
+        mainGreen: "#b3d820",
+        // mainGreen: "#CCFF00",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],

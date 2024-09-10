@@ -17,7 +17,7 @@ export default function Dashboard(params: any) {
     }, [value]);
 
     return (
-        <div className="flex flex-row justify-center bg-black">
+        <div className="flex flex-row justify-center bg-white">
             {chkTypePage ? <DashboardPage typePageDashboard={() => setChkTypePage(false)} /> : <DashboardItemsPage />}
         </div>
     );
