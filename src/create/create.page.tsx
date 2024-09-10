@@ -75,11 +75,9 @@ const Create = () => {
         event.preventDefault();
         const file = event.target.files?.[0];
 
-        // Check if a file is selected
         if (file) {
             const reader = new FileReader();
 
-            // Clear the input value to trigger change event on same file selection
             event.target.value = "";
 
             reader.onloadend = () => {
@@ -91,18 +89,23 @@ const Create = () => {
     };
 
     const onSubmit = () => {
-        console.log(selectedImage);
-        console.log(projectName);
-        console.log(description);
-        console.log(telegram);
-        console.log(twitter);
-        console.log(discord);
-        console.log(date);
-        console.log(month);
-        console.log(year);
-        console.log(hours);
-        console.log(minutes);
-        console.log(selectedOption);
+        const projectData = {
+            projectName,
+            description,
+            telegram,
+            twitter,
+            discord,
+            date,
+            month,
+            year,
+            hours,
+            minutes,
+            selectedOption,
+            selectedImage
+        };
+
+        // เก็บข้อมูลใน localStorage
+        localStorage.setItem("projectData", JSON.stringify(projectData));
     };
 
     const onCancel = () => {

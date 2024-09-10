@@ -4,6 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Hamburger from "../../public/hamburger.svg";
 import Link from "next/link";
+import { ethers } from "ethers";
+
+declare global {
+    interface Window {
+        ethereum: any;
+    }
+}
 
 const Header = (props: any) => {
     const { headerName } = props;
@@ -11,12 +18,38 @@ const Header = (props: any) => {
 
     const main1 = "flex flex-row justify-between text-mainGreen px-3 bg-white pt-10 pb-[15px] z-[100] sticky top-0";
 
-    const [signIn, setSignIn] = useState<boolean>();
+    const [signIn, setSignIn] = useState<boolean>(false);
     const [menuHamburger, setMenuHamburger] = useState<boolean>(false);
+    const [account, setAccount] = useState<string | null>(null);
     const menuRef = useRef<HTMLDivElement>(null);
 
-    const onSignIn = (status: boolean) => {
-        setSignIn(status);
+    // ฟังก์ชันสำหรับการย่อ address
+    const shortenAddress = (address: string) => {
+        return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
+    };
+
+    const onSignIn = async (status: boolean) => {
+        if (status) {
+            if (window.ethereum) {
+                try {
+                    const provider = new ethers.BrowserProvider(window.ethereum);
+                    await provider.send("eth_requestAccounts", []);
+                    const signer = provider.getSigner();
+                    const address = await (await signer).getAddress();
+                    setAccount(address);
+                    setSignIn(true);
+                    localStorage.setItem("isConnected", "true"); // เก็บสถานะการเชื่อมต่อใน localStorage
+                } catch (error) {
+                    console.log("Connection error: ", error);
+                }
+            } else {
+                alert("MetaMask is not installed");
+            }
+        } else {
+            setSignIn(false);
+            setAccount(null);
+            localStorage.removeItem("isConnected");
+        }
     };
 
     const onSetMenuHamburger = () => {
@@ -29,6 +62,11 @@ const Header = (props: any) => {
                 setMenuHamburger(false);
             }
         };
+
+        const connectionStatus = localStorage.getItem("isConnected");
+        if (connectionStatus === "true") {
+            setSignIn(true);
+        }
 
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
@@ -85,7 +123,7 @@ const Header = (props: any) => {
                                 onClick={() => {
                                     setMenuHamburger(false);
                                 }}
-                                className="w-full flex text-center justify-center"
+                                className="w-full flex text-center justify_center"
                             >
                                 Dashboard
                             </Link>
@@ -110,6 +148,8 @@ const Header = (props: any) => {
                                 Mint
                             </Link>
                             <hr className="my-2 border-mainGreen" />
+                            {/* แสดงที่อยู่กระเป๋าแบบย่อ */}
+                            {account && <div>{shortenAddress(account)}</div>}
                             <button
                                 className="w-full"
                                 onClick={() => {
